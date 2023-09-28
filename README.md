@@ -9,9 +9,6 @@ Welcome to Grow Together, a web application designed to facilitate the exchange 
 2. [Getting Started](#getting-started)
 3. [Features](#features)
 4. [Usage](#usage)
-5. [Contributing](#contributing)
-6. [Support](#support)
-7. [License](#license)
 
 ---
 
