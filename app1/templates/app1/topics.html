@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<style>
+    h3{
+        color: rgb(173, 173, 170);
+    }
+    .list{
+        display: block;
+        width: 80%;
+        padding: 10px;
+        margin: 5px;
+        background-color: rgb(46, 44, 44);
+        font-size: 1.3em;
+        color:white ;
+    }
+    #tex{
+        color: white;
+        text-decoration: none;
+    }
+
+</style>
+<h3>
+    Browse
+</h3>
+<hr>
+<a id="tex" href="{% url 'home' %}">
+<div class="list">
+    <!-- <a id="tex" href="{% url 'home' %}">All</a> -->
+    All
+</div>
+</a>
+{% for topic in val1  %}
+<a id="tex" href="{% url 'home' %}?q={{topic.name}}">
+ <div class="list">
+    {{topic.name}}
+    <!-- <a id="tex" href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a> -->
+ </div>
+</a>
+ 
+{% endfor %}

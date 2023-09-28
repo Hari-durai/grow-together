@@ -1,0 +1,18 @@
+<h3>Your activity</h3>
+        
+<hr>
+{% for m in recent %}
+
+<div>
+    <small>@{{m.user}} {{ m.create | timesince }}</small>
+    <br>
+    <small>{{m.room}}</small>
+    {% if request.user == m.user %}
+    <a href="{% url 'delete-comment' m.id %}"">Delete</a>
+    {% endif %}
+    
+    <p>{{ m.body }}
+</div>
+<hr>
+
+{% endfor %}

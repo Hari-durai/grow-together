@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{%  block content %}
+        <style>
+            .container{
+                display:grid;
+                grid-template-columns: 1fr 3fr 1fr;
+            }
+        </style>
+
+       <div class="container">
+        <div>
+        {% include 'app1/topics.html' %}
+       </div>
+       <div>
+        <h3>{{count}} Post Available </h3>
+        <a href="create-room">create room </a>
+        {% include 'app1/posts.html' %}
+    </div>
+     <div>
+        {% include 'app1/activity.html' %}
+     </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,46 @@
+<style>
+    a{
+        text-decoration: none;
+        color: white;
+        
+    }
+    #a1{
+        background-color: rgb(208, 67, 236);
+        margin: 2px;
+        border: 2px solid rgb(223, 53, 238);
+    }
+    #a1:hover{
+        background-color: rgb(236, 67, 109);
+        margin: 2px;
+        border: 2px solid rgb(238, 53, 99);
+    }
+    #col{
+        color: blue;
+    }
+    #col1{
+        color: rgb(80, 80, 224);
+    }
+    .cont{
+        background-color: rgb(46, 44, 44);
+        padding: 10px;
+        margin: 10px;
+    }
+</style>
+<div >
+    {% for  e in value %}
+    
+    <div class="cont">
+        {% if request.user == e.host %}
+    <a id="a1" href="update-room/{{e.id}}"> Edit </a> 
+    <a id="a1" href="delete-room/{{e.id}}" >Delete</a>
+    <br>
+    {% endif %}
+    <a id="col" href="{% url 'profile' e.host.id %}"> @{{ e.host.username}}</a>
+    <a href="root/{{e.id}}">
+     <h4>  {{e.name}}</h4>
+     <small id="col1">#{{e.top.name}}</small>
+     <hr>
+    </div>
+        </a>
+    {% endfor %}
+</div>
