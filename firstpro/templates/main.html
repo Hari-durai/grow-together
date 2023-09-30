@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/styles/main.css" />
+    </head>
+    <!-- <header>
+        {% include "navi.html"  %}
+    </header> -->
+    <body>
+        {% include "navi.html"  %}
+        {% if messages %}
+        <ul class="message">
+            {% for message in messages %}
+            
+            <li>
+            {{message}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% block content %}
+
+        {% endblock content %}
+
+    </body>
+</html>

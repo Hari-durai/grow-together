@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{%  block content %}
+        <style>
+            .container{
+                display:grid;
+                grid-template-columns: 1fr 3fr 1fr;
+            }
+            .box{
+                background-color:rgb(37, 36, 36);
+                text-align: right;
+                
+            }
+            .bo{
+                background-color: violet;
+                border: 2px solid violet;
+                left: 500; 
+                margin-right: 20px;
+                border-radius: 5px;
+                
+            }
+            #tex1{
+                padding: 3px;
+                color:rgb(241, 235, 235);
+                font-size: 1.5em;
+            }
+            
+        </style>
+
+       <div class="container">
+        <div>
+        {% include 'app1/topics.html' %}
+       </div>
+       <div>
+        <h3>{{count}} Post Available </h3>
+        <div class="box">
+        <span class="bo">
+        <a id="tex1" href="create-room">create room </a></span></div>
+        {% include 'app1/posts.html' %}
+    </div>
+     <div>
+        {% include 'app1/activity.html' %}
+     </div>
+</div>
+{% endblock content %}

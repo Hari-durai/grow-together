@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+
+{%  block content %}
+<h1>
+    login {{value.name }}
+</h1>
+<p>
+    {{value.description }}
+</p>
+<div>
+    <h3>Comments</h3>
+    <hr>
+    <div>
+        {% for m in msg %}
+        <div>
+            {% if request.user == m.user %}
+            <a href="{% url 'delete-comment' m.id %}">Delete</a>
+            {% endif %}
+            <small>
+                @{{m.user}} {{m.create | timesince }}
+            </small>
+            <p>{{ m.body}}</p>
+            
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+<div>
+    {% if request.user.is_authenticated %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input type="text" name="body" style="width: 90vh ;" >
+    </form>
+    {% endif %}
+</div>
+    
+</div>
+{% endblock content %}

@@ -1,0 +1,41 @@
+<style>
+    .contactive{
+        background-color: rgb(46, 44, 44);
+        padding: 10px;
+        margin: 10px;
+    }
+    #user{
+        color: white;
+    }
+    .button{
+        
+        float: right;
+        background-color: rgb(208, 67, 236);
+        
+        border: 2px solid rgb(223, 53, 238);
+    }
+    .button:hover:hover{
+        background-color: rgb(236, 67, 109);
+        float: right;
+        border: 2px solid rgb(238, 53, 99);
+    }
+</style>
+<h3>Activities</h3>
+        
+<hr>
+{% for m in recent %}
+
+<div class="contactive">
+    <small id="user">@{{m.user}} {{ m.create | timesince }}</small>
+    <br>
+    <small id="user">{{m.room}}</small>
+    {% if request.user == m.user %}
+    <span class="button">
+    <a href="{% url 'delete-comment' m.id %}"">Delete</a></span>
+    {% endif %}
+    
+    <p id="user">{{ m.body }}
+</div>
+<hr>
+
+{% endfor %}

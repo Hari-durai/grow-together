@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+    .container{
+    
+        display:grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        
+    }
+</style>
+<h1>{{host.username}}</h1>
+<div class="container">
+    <div>
+        {% include 'app1/topics.html' %}
+    </div>
+    <div>
+        {% include 'app1/posts.html' %}
+    </div>
+    <div>
+        {% include 'app1/activity.html' %}
+    </div>
+</div>
+
+{% endblock content %}
