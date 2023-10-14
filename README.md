@@ -1,4 +1,4 @@
-# grow-together(still in progress)
+# grow-together
 # Grow Together - Study and Programming Q&A Community
 
 Welcome to Grow Together, a web application designed to facilitate the exchange of knowledge and expertise among users interested in programming and various study-related topics. Grow Together aims to foster a collaborative learning environment where users can ask questions, seek answers, and share their knowledge with others.
